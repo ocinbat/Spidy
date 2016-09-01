@@ -21,7 +21,7 @@ namespace SpidyTests.CoreTests
         [ExpectedException(typeof(System.ArgumentException))]
         public void Load_With_Invalid_Url_Should_Throw_Argument_Exception_Test()
         {
-            string url = "www.trendyol.com";
+            string url = "www.invalidUrl.com";
 
             HtmlDocument result = _htmlLoader.Load(url);
 
@@ -32,7 +32,7 @@ namespace SpidyTests.CoreTests
         [TestMethod]
         public void Load_With_Invalid_Url_Should_Test()
         {
-            string url = "http://www.trendyol.com";
+            string url = "http://www.validUrl.com";
 
             HtmlDocument result = _htmlLoader.Load(url);
 
