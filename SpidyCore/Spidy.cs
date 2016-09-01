@@ -9,9 +9,15 @@ namespace SpidyCore
         private readonly IHtmlLoader _htmlLoader;
         private readonly ISpidyParser _parser;
 
-        public Spidy(IHtmlLoader htmlLoader)
+        public Spidy()
+        {
+            IHtmlLoader htmlLoader = new HtmlLoader(new HtmlWeb());
+        }
+
+        public Spidy(IHtmlLoader htmlLoader, ISpidyParser parser)
         {
             _htmlLoader = htmlLoader;
+            _parser = parser;
         }
 
         public void Get(ParseInfo parseInfo)
